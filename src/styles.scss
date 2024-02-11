@@ -1,0 +1,35 @@
+@import './styles/variables.scss';
+
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(circle, rgba(131, 58, 180, 1) 0%, rgba(227, 151, 92, 1) 86%, rgba(252, 176, 69, 1) 100%);
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ccc;
+    margin: auto;
+    padding: 30px 40px 40px;
+    border-radius: 5px;
+}
+
+.title {
+    margin: 0;
+}
+
+.form {
+    &-field {
+        &:not(:first-child) {
+            margin-top: 10px;
+        }
+    }
+}
+
+.input {
+    margin-top: 10px;
+}
