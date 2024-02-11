@@ -6,5 +6,7 @@ export const validatePhone = (input) => {
   clearError(input);
   if (value === "") {
     showError(input, "Please enter your phone number");
+    return false;
   }
+  return true;
 };

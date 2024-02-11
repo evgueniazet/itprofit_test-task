@@ -6,5 +6,7 @@ export const validateName = (input) => {
   clearError(input);
   if (value === "") {
     showError(input, "Please enter your name");
+    return false;
   }
+  return true;
 };

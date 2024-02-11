@@ -1,5 +1,4 @@
 export const showError = (input, message) => {
-  console.log("1");
   const formField = input.parentElement;
   formField.classList.add("error");
   let errorElement = formField.querySelector(".error-message");

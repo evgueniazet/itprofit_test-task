@@ -7,7 +7,10 @@ export const validateEmail = (input) => {
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (value === "") {
     showError(input, "Please enter your email");
+    return false;
   } else if (!emailPattern.test(value)) {
     showError(input, "Please enter a valid email address");
+    return false;
   }
+  return true;
 };

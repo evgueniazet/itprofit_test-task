@@ -4,34 +4,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Form</title>
 </head>
 
 <body>
+    <div>
+        <button class="modal-window-btn button">Click me!</button>
+    </div>
     <div class="wrapper">
-        <h1 class="title">Form</h1>
-        <form action="#" method="post" novalidate>
-            <div class="form-field">
-                <label for="name">Name:</label>
-                <input class="input" type="text" id="name" name="name">
+        <h1 class="title">Registration</h1>
+        <div class="form-wrapper">
+            <div class="success-message" id="successMessage">
+                <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-p79yt4 icon"
+                    focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="DoneAllIcon" tabindex="-1"
+                    title="DoneAll">
+                    <path
+                        d="m18 7-1.41-1.41-6.34 6.34 1.41 1.41zm4.24-1.41L11.66 16.17 7.48 12l-1.41 1.41L11.66 19l12-12zM.41 13.41 6 19l1.41-1.41L1.83 12z">
+                    </path>
+                </svg>
+                <p class="success-message-text"></p>
             </div>
-            <div class="form-field">
-                <label for="email">E-mail:</label>
-                <input class="input" type="email" id="email" name="email">
+
+            <div class="error-message" id="errorMessage">
+                <p class="error-message-text"></p>
             </div>
-            <div class="form-field">
-                <label for="phone">Phone:</label>
-                <input type="text" id="phone" name="phone" placeholder="Enter phone number">
-            </div>
-            <div class="form-field">
-                <label for="message">Message:</label>
-                <textarea id="message" name="message"></textarea>
-            </div>
-            <button type="submit">Submit</button>
-        </form>
+
+            <form class="form" action="#" method="post" novalidate>
+                <div class="form-field">
+                    <label for="name">Name:</label>
+                    <input class="field" type="text" id="name" name="name">
+                </div>
+                <div class="form-field">
+                    <label for="email">E-mail:</label>
+                    <input class="field" type="email" id="email" name="email">
+                </div>
+                <div class="form-field">
+                    <label for="phone">Phone:</label>
+                    <input class="field" type="text" id="phone" name="phone" placeholder="">
+                </div>
+                <div class="form-field">
+                    <label for="message">Message:</label>
+                    <textarea class="field" id="message" name="message"></textarea>
+                </div>
+                <button class="submit-btn button" type="submit">Sign Up</button>
+            </form>
+        </div>
+
     </div>
 
-    <script src="bundle.js"></script>
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <p>Modal window text</p>
+        </div>
+    </div>
 </body>
 
 </html>

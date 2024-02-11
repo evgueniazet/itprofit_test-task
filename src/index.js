@@ -6,7 +6,20 @@ import { validateName } from "./features/validateName";
 import { validatePhone } from "./features/validatePhone";
 import { validateMessage } from "./features/validateMessage";
 
+const validateInput = (input, validator) => {
+  if (formSubmitted) {
+    validator(input);
+  }
+};
+
+const addInputValidationListener = (input, validator) => {
+  input.addEventListener("input", () => validateInput(input, validator));
+};
+
 const form = document.querySelector("form");
+const modalWindowBtn = document.querySelector(".modal-window-btn");
+const modal = document.getElementById("modal");
+const closeBtn = document.querySelector(".close-btn");
 
 let formSubmitted = false;
 
@@ -21,33 +34,21 @@ const emailInput = document.getElementById("email");
 const phoneInput = document.getElementById("phone");
 const messageInput = document.getElementById("message");
 
-nameInput.addEventListener("input", () => {
-  if (formSubmitted) {
-    validateName(nameInput);
-  }
-});
-
-emailInput.addEventListener("input", () => {
-  if (formSubmitted) {
-    validateEmail(emailInput);
-  }
-});
-
-phoneInput.addEventListener("input", () => {
-  if (formSubmitted) {
-    validatePhone(phoneInput);
-  }
-});
-
-messageInput.addEventListener("input", () => {
-  if (formSubmitted) {
-    validateMessage(messageInput);
-  }
-});
+addInputValidationListener(nameInput, validateName);
+addInputValidationListener(emailInput, validateEmail);
+addInputValidationListener(phoneInput, validatePhone);
+addInputValidationListener(messageInput, validateMessage);
 
 const phoneMask = new Inputmask({
   mask: "+7 (999) 999-99-99",
   placeholder: "+7 (___) ___-__-__",
 });
-
 phoneMask.mask(phoneInput);
+
+modalWindowBtn.addEventListener("click", () => {
+  modal.classList.add("active");
+});
+
+closeBtn.addEventListener("click", () => {
+  modal.classList.remove("active");
+});
