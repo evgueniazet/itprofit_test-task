@@ -1,1 +1,0 @@
-# itprofit_test-task
